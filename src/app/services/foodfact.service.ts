@@ -13,10 +13,17 @@ export class FoodfactService {
 
   constructor(private http: HttpClient) { }
 
-  getFoodsByName(name: string) {
+  getFoodsByName(name: string, page = 1) {
     let httpParams = new HttpParams()
     .set('brands_tags', name)
-    .set('fields','code,product_name,image_front_small_url');
+    .set('fields','code,product_name,image_front_small_url')
+    .set('page',page);
+    return this.http.get(this.baseUrl + "/api/v2/search", {params: httpParams});
+  }
+
+  getFoodsByCode(code: number) {
+    let httpParams = new HttpParams()
+    .set('code',code);
     return this.http.get(this.baseUrl + "/api/v2/search", {params: httpParams});
   }
 }
