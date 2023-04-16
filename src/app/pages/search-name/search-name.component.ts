@@ -9,15 +9,30 @@ import { ResponseProducts } from 'src/app/services/model/response-products';
 })
 export class SearchNameComponent implements OnInit {
   response : ResponseProducts | undefined;
+  brand: string = "";
   constructor(private foodFactService : FoodfactService) {}
   
   ngOnInit(): void {
     this.search("");
   }
 
-  search(brand: any) {
-    this.foodFactService.getFoodsByName(brand).subscribe((response: ResponseProducts | any) => {
+  search(brand: string, page = 1) {
+    this.foodFactService.getFoodsByName(brand, page).subscribe((response: ResponseProducts | any) => {
       this.response = response;
+      this.brand = brand;
     })
+  }
+
+  next() { 
+    if(this.response) {
+      this.search(this.brand, this.response?.page + 1);
+    }
+  }
+
+  previous() {
+    if(this.response) {
+      this.search(this.brand, this.response?.page - 1);  
+      console.log(this.response);
+    }
   }
 }

@@ -1,6 +1,10 @@
 <div class="product-card" (click)="productDetails()">
     <div class="product-card_img-wrapper">
-        <img class="product-card_img" [src]="product?.image_front_small_url">
+        <img *ngIf="product?.image_front_small_url; else notExistImage;" class="product-card_img" [src]="product?.image_front_small_url">
     </div>
     <span class="product-card_title">{{ product?.product_name }}</span>
 </div>
+
+<ng-template #notExistImage>
+    <img class="product-card_img" src="/assets/images/oups.jpg">
+</ng-template>
