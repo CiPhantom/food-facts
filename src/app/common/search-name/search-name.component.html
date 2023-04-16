@@ -1,0 +1,12 @@
+<div class="search-input-block">
+    <label for="name">Enter a brand name :</label>
+    <input type="text" class="form-control" #research (keyup.enter)="search(research.value)">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let product of response?.products" class="col-md-3 col-sm-4">
+            <simple-product [product]="product"></simple-product>
+        </div>   
+    </div>
+</div>

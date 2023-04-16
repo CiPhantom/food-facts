@@ -1,0 +1,29 @@
+.product-card {
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    padding: 8px;
+    margin: 8px;
+    height: 280px;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.product-card_img-wrapper {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.product-card:hover {
+    border: 1px blueviolet solid;
+    cursor: pointer;
+}
+
+.product-card_img {
+    margin: 0 auto;
+    max-width: 100%;
+}
