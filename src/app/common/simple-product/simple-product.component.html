@@ -1,6 +1,6 @@
-<div class="product-card">
+<div class="product-card" (click)="productDetails()">
     <div class="product-card_img-wrapper">
-        <img class="product-card_img" [src]="product.image_front_small_url">
+        <img class="product-card_img" [src]="product?.image_front_small_url">
     </div>
-    <span class="product-card_title">{{ product.product_name }}</span>
+    <span class="product-card_title">{{ product?.product_name }}</span>
 </div>

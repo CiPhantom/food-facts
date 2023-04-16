@@ -8,7 +8,7 @@ import { ResponseProducts } from 'src/app/services/model/response-products';
   styleUrls: ['./search-name.component.scss']
 })
 export class SearchNameComponent implements OnInit {
-  response : any;
+  response : ResponseProducts | undefined;
   constructor(private foodFactService : FoodfactService) {}
   
   ngOnInit(): void {
@@ -16,7 +16,7 @@ export class SearchNameComponent implements OnInit {
   }
 
   search(brand: any) {
-    this.foodFactService.getFoodsByName(brand).subscribe((response)=> {
+    this.foodFactService.getFoodsByName(brand).subscribe((response: ResponseProducts | any) => {
       this.response = response;
     })
   }
