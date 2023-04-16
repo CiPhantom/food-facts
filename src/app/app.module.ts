@@ -9,8 +9,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchNameComponent } from './common/search-name/search-name.component';
+import { SearchNameComponent } from './pages/search-name/search-name.component';
 import { SimpleProductComponent } from './common/simple-product/simple-product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 
@@ -19,7 +20,8 @@ import { SimpleProductComponent } from './common/simple-product/simple-product.c
     AppComponent,
     NavbarComponent,
     SearchNameComponent,
-    SimpleProductComponent
+    SimpleProductComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
