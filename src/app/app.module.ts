@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchNameComponent } from './pages/search-name/search-name.component';
 import { SimpleProductComponent } from './common/simple-product/simple-product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { SubscribeComponent } from './pages/subscribe/subscribe.component';
+import { SubscriptionFormComponent } from './pages/subscribe/forms/subscription-form/subscription-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +24,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     NavbarComponent,
     SearchNameComponent,
     SimpleProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SubscribeComponent,
+    SubscriptionFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

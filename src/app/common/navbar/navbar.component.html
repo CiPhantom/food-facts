@@ -5,11 +5,14 @@
       </button>
       <span>Food thread App</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" (click)="goHome()" aria-label="Example icon-button with home icon">
+      <button mat-icon-button (click)="goHome()" aria-label="icon-button with home icon" *ngIf="!(currentUrl === '/')">
         <mat-icon>home</mat-icon>
+      </button>
+      <button mat-stroked-button color="white" (click)="goSubscribe()">
+        Signin
+      </button>
+      <button mat-stroked-button color="white" (click)="goSubscribe()"  *ngIf="!(currentUrl === '/subscribe')">
+        Login
       </button>
     </mat-toolbar>
   </p>

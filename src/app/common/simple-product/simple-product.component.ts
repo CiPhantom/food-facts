@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Product } from 'src/app/services/model/product';
+import { Product } from 'src/app/services/footfactapi/model/product';
 
 @Component({
   selector: 'simple-product',
