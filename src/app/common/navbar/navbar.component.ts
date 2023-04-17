@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -8,10 +8,21 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private router : Router) {}
+  currentUrl : string = "";
+
+  constructor(private router : Router) {
+    this.router.events.subscribe((event) => {
+      if( event instanceof NavigationEnd ) {
+        this.currentUrl = event.url;
+      }
+    });
+  }
 
   goHome() : void {
     this.router.navigate(['']);
   }
 
+  goSubscribe() : void {
+    this.router.navigate(['subscribe']);
+  }
 }

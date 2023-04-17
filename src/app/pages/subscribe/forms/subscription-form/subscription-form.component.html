@@ -1,0 +1,84 @@
+<div class="subscription">
+    <form class="subscription-form" [formGroup]="form" (ngSubmit)="submit(form)">
+        <h2>Crédentials</h2>
+        <div class="form-group subscription-form_credentials">
+            
+            <div class="form-group">
+                <label for="login">Login</label>
+                <input formControlName="login" type="text" id="login" name="login" class="form-control">
+                <div class="alert alert-danger"  *ngIf="login.invalid && login.touched">
+                    <div *ngIf="login.errors['minlength']"> Must me more than {{ login.errors['minlength'].requiredLength }} characters </div>
+                    <div *ngIf="login.errors['required']"> This field is mandatory </div>
+                </div>
+            </div>
+
+            <label for="password">password</label>
+            <input formControlName="password" type="password" id="password" name="password" class="form-control">
+            <div class="alert alert-danger"  *ngIf="password.invalid && password.touched">
+                <div *ngIf="password.errors['minlength']"> Must me more than {{ password.errors['minlength'].requiredLength }} characters </div>
+                <div *ngIf="password.errors['required']"> This field is mandatory </div>
+            </div>
+
+            <label for="password-confirmation">password confirmation</label>
+            <input formControlName="passwordConfirmation" type="password" id="password-confirmation" name="passwordConfirmation" class="form-control">
+            <div class="alert alert-danger"  *ngIf="passwordConfirmation.invalid && passwordConfirmation.touched">
+                <div *ngIf="passwordConfirmation.errors['minlength']"> Must me more than {{ passwordConfirmation.errors['minlength'].requiredLength }} characters </div>
+                <div *ngIf="passwordConfirmation.errors['required']"> This field is mandatory </div>
+            </div>
+            <div class="alert alert-warning" *ngIf="password.value !== passwordConfirmation.value && passwordConfirmation.touched">
+                <div>Confirmation doesn't match password </div>
+            </div>
+
+            <label for="email">email</label>
+            <input type="text" formControlName="email" id="email" name="email" class="form-control">
+            <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                <div *ngIf="email.errors['email']"> Must be a valid email </div>
+                <div *ngIf="email.errors['required']"> This field is mandatory </div>
+            </div>
+        </div>
+
+        <h2>Tell us about you !</h2>
+
+        <div class="form-group subscription-form_identity">
+            <label for="firstname">Firstname</label>
+            <input formControlName="firstname" type="text" id="firstname" name="firstname" class="form-control">
+            <div class="alert alert-danger" *ngIf="firstname.touched && firstname.invalid">
+                <div *ngIf="firstname.errors['required']">Firstname is mandatory.</div>
+                <div *ngIf="firstname.errors['minlength']"> Must me more than {{ firstname.errors['minlength'].requiredLength }} characters </div>
+            </div>
+
+            <label for="lastname">lastname</label>
+            <input formControlName="lastname" type="text" name="lastname" id="lastname" class="form-control">
+            <div class="alert alert-danger" *ngIf="lastname.touched && lastname.invalid">
+                <div *ngIf="lastname.errors['required']">lastname is mandatory.</div>
+                <div *ngIf="lastname.errors['minlength']"> Must me more than {{ lastname.errors['minlength'].requiredLength }} characters </div>
+            </div>
+
+            <label for="birthday">birthday</label>
+            <input formControlName="birthday" type="date" id="birthday" name="birthday" class="form-control">
+
+            <label for="birthCountry">birthcountry</label>
+            <input formControlName="birthCountry" type="text" name="birthCountry" id="birthCountry" class="form-control">
+        </div>
+
+        <h2>More about you </h2>
+
+        <div class="form-group subscription-form_aboutyou">
+            <label for="biography">biography</label>
+            <textarea formControlName="biography" id="biography"  name="biography" class="form-control"></textarea>
+            <div class="alert alert-danger" *ngIf="biography.touched && biography.invalid">
+                <div *ngIf="biography.errors['required']">biography is mandatory.</div>
+                <div *ngIf="biography.errors['minlength']"> Must me more than {{ biography.errors['minlength'].requiredLength }} characters </div>
+            </div>
+
+            <label for="expertise">expertise</label>
+            <textarea formControlName="expertise" id="expertise" name="expertise" class="form-control"></textarea>
+            <div class="alert alert-danger" *ngIf="expertise.touched && expertise.invalid">
+                <div *ngIf="expertise.errors['required']">expertise is mandatory.</div>
+                <div *ngIf="expertise.errors['minlength']"> Must me more than {{ expertise.errors['minlength'].requiredLength }} characters </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" [disabled]="form.invalid">Subscribe</button>
+    </form>
+</div>

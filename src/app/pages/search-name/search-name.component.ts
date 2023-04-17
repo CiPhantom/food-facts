@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodfactService } from 'src/app/services/foodfact.service';
-import { ResponseProducts } from 'src/app/services/model/response-products';
+import { FoodfactService } from 'src/app/services/footfactapi/foodfact.service';
+import { ResponseProducts } from 'src/app/services/footfactapi/model/response-products';
 
 @Component({
   selector: 'search-name',
