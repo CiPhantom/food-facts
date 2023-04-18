@@ -8,7 +8,7 @@
       <button mat-icon-button (click)="goHome()" aria-label="icon-button with home icon" *ngIf="!(currentUrl === '/')">
         <mat-icon>home</mat-icon>
       </button>
-      <button mat-stroked-button color="white" (click)="goSubscribe()">
+      <button mat-stroked-button color="white" (click)="goLogin()"   *ngIf="!(currentUrl === '/login')">
         Signin
       </button>
       <button mat-stroked-button color="white" (click)="goSubscribe()"  *ngIf="!(currentUrl === '/subscribe')">
