@@ -15,6 +15,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { SubscribeComponent } from './pages/subscribe/subscribe.component';
 import { SubscriptionFormComponent } from './pages/subscribe/forms/subscription-form/subscription-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginFormComponent } from './pages/login/forms/login-form/login-form.component';
 
 
 
@@ -26,7 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SimpleProductComponent,
     ProductDetailsComponent,
     SubscribeComponent,
-    SubscriptionFormComponent
+    SubscriptionFormComponent,
+    LoginComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

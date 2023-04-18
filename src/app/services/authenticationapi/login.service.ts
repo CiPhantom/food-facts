@@ -1,15 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LoginRequest } from './model/login-request';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SubscriptionService {
+export class LoginService {
+
   baseUrl: string = "http://localhost:8090";
 
   constructor(private httpClient : HttpClient) { }
 
-  doSubscription(subscription) {
-    return this.httpClient.post(this.baseUrl + "/user/subscribe", subscription);
+  doLogin(loginRequest : LoginRequest) {
+    return this.httpClient.post(this.baseUrl + "/user/authenticate", loginRequest);
   }
 }

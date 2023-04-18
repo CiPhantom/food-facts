@@ -25,4 +25,8 @@ export class NavbarComponent {
   goSubscribe() : void {
     this.router.navigate(['subscribe']);
   }
+
+  goLogin() : void {
+    this.router.navigate(['login']);
+  }
 }
